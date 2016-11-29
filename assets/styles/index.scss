@@ -1,2 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$background-color: #ebffff;
+$font-color: #000;
+
+
+.nav-bar,
+.dropdown-toggle {
+  font-family: Trebuchet MS;
+}
+
+.container-fluid {
+  background-color: $background-color;
+}

@@ -8,9 +8,8 @@
       <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
       <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+    <div class="nav">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
@@ -19,11 +18,11 @@
         <a class="navbar-brand">My Autism Fundraisers</a>
       </div>
 
-<!-- BEHGIN NAV BAR -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!-- BEGIN NAV BAR -->
+      <div class="collapse navbar-collapse" id="nav-bar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle sign-up pulse" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up/In?</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up/In?</a>
           <ul class="dropdown-menu">
             <li>
               <!-- Button trigger modal -->
@@ -55,22 +54,15 @@
 </nav>
 
 <!-- NAV BAR ENDS HERE -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog"
+    aria-labelledby="signUpLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="signUpLabel">Sign Up!</h4>
+          </div>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-
-      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="signUpLabel">Sign Up!</h4>
-            </div>
             <div class="modal-body">
               <form id="sign-up">
                 <div class="form-group">
@@ -151,6 +143,23 @@
             </div>
           </div>
         </div>
+      </div>
+
+  <!--BODY -->
+    <body class="container-fluid">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.</p>
+
+      <div class="api-buttons">
+        <button type="button" class="get-all" id="get">GET</button>
+        <button type="button" class="create-my" id='create'>POST</button>
+        <button type="button" class="update-my" id='update'>PATCH</button>
+        <button type="button" class="delete-my" id='delete'>DELETE</button>
       </div>
     </body>
 </html>
