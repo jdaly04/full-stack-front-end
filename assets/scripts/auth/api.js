@@ -37,8 +37,6 @@ const changePassword = (data) =>
 
 
 
-
-
 module.exports = {
 signUp,
 signIn,

@@ -11,7 +11,6 @@ const success = (data) => {
 const signUpSuccess = (data) => {
   store.token = data.user.token;
   $('#signUpModal').modal("hide");
-//  $('.win').text("Success! Now, sign in!");
 };
 
 const signInSuccess = (data) => { //if you have curly braces you can have more than one expression. without, only 1 expression allowed.
@@ -22,6 +21,11 @@ const signInSuccess = (data) => { //if you have curly braces you can have more t
   $('#sign-in-button').hide();
   $('#sign-up-button').hide();
   $('#signInModal').modal("hide");
+
+  //  button for "My Library" should show up. when you click "my library, you should
+  // see a table of your saved fundraisers. Then, you should be able to browse all,
+  // and update your library by adding a new one, or be able to delete one from your
+  // library.
 };
 
 const changePasswordSuccess = (data) => {
@@ -30,18 +34,12 @@ const changePasswordSuccess = (data) => {
 };
 
 const signOutSuccess = () => {
-  //$('.win').text("You are now logged out! Please sign back in to play!");
   $('#sign-in-button').show();
   $('#sign-up-button').show();
   $('#ch-password').hide();
   $('#sign-out-button').hide();
-//  $('.box').text('');
-//  $('.win').text('You are logged out! Please sign up or in!');
-
-
-  store.user = null;
-  store.gameData = null;
 };
+
 
 const failure = (error) => {
   console.error(error);
