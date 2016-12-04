@@ -24,6 +24,7 @@ const onCreateLib = function(event) {
 };
 
 const onUpdateLib = function() {
+  event.preventDefault();
   let data = {
     "library": {
       "fundraiser": {
@@ -53,7 +54,7 @@ const onDeleteLib= function(event) {
 const getAllHandler = () => {
   $('#get').on('click', onGetAll);
   $('.createLibrary').on('submit', onCreateLib);
-  $('#update').on('click', onUpdateLib);
+  $('#update').on('submit', onUpdateLib);
   $('#delete').on('click', onDeleteLib);
 };
 

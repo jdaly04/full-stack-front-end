@@ -25,7 +25,7 @@ $.ajax({
 
    const updateLib = (data) =>
     $.ajax({
-    url: config.host + '/libraries/10',
+    url: config.host + '/libraries/53',
     //url: 'http://localhost:4741/libraries/1',
       method: 'PATCH',
        headers: {
@@ -36,7 +36,7 @@ $.ajax({
 
     const deleteLib= () =>
      $.ajax({
-       url: config.host + '/libraries/33',
+       url: config.host + '/libraries/52',
         method: 'DELETE',
         headers: {
         Authorization: 'Token token=' + store.user.token,

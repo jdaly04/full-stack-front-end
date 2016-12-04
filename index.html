@@ -147,7 +147,12 @@
       <h1 class="data"></h1>
       <div class="api-buttons">
         <button type="button" class="get-all" id="get">GET</button>
-        <button type="button" class="update-my" id='update'>PATCH</button>
+        <button type="button" class="update-my" id='update'>PATCH
+          <form id="updateLibName">
+            <input type="text" name="library[newName]" placeholder="New Name">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </button>
         <button type="button" class="delete-my" id='delete'>DELETE</button>
         <button type="button" class="my-library" id='mine'>MyFundraisers</button>
       </div>

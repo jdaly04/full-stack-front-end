@@ -3,7 +3,7 @@
 //const store = require('./store');
 //const readData = JSON.parse(data);
 const getAllFundraisers = require('../templates/fundraisers.handlebars');
-const createLibrary = require('../templates/libraries.handlebars');
+//const createLibrary = require('../templates/libraries.handlebars');
 const store = require('../store.js');
 
 const getAllSuccess = (data) => {
