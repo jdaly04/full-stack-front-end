@@ -17,30 +17,30 @@ $.ajax({
    $.ajax({
      url: config.host + '/libraries',
      method: 'POST',
-  //   headers: {
-//       Authorization: 'Token token=' + store.user.token,
-//     },
-     data
+     headers: {
+       Authorization: 'Token token=' + store.user.token,
+     },
+     data,
    });
 
    const updateLib = (data) =>
     $.ajax({
-    //  url: config.host + '/libraries/3',
-    url: 'http://localhost:4741/libraries/1',
+    url: config.host + '/libraries/10',
+    //url: 'http://localhost:4741/libraries/1',
       method: 'PATCH',
-      // headers: {
-      // Authorization: 'Token token=' + store.user.token,
-      // },
+       headers: {
+       Authorization: 'Token token=' + store.user.token,
+       },
       data,
     });
 
-    const deleteFund = (data) =>
+    const deleteLib= () =>
      $.ajax({
-       url: 'http://localhost:4741/fundraisers/2',
+       url: config.host + '/libraries/33',
         method: 'DELETE',
-        // headers: {
-        // Authorization: 'Token token=' + store.user.token,
-        // },
+        headers: {
+        Authorization: 'Token token=' + store.user.token,
+        },
       });
 
 
@@ -49,5 +49,5 @@ module.exports = {
   getAll,
   createLib,
   updateLib,
-  deleteFund,
+  deleteLib,
 };

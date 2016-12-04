@@ -40,10 +40,11 @@ const onUpdateLib = function() {
     .catch(ui.failure);
 };
 
-const onDeleteFund = function(event) {
+const onDeleteLib= function(event) {
   event.preventDefault();
-  api.deleteFund()
-    .then(ui.deleteFundSuccess)
+  let id = $(event.target).data('id');
+  api.deleteLib(id)
+    .then(ui.deleteLibSuccess)
     .catch(ui.failure);
 };
 
@@ -53,7 +54,7 @@ const getAllHandler = () => {
   $('#get').on('click', onGetAll);
   $('.createLibrary').on('submit', onCreateLib);
   $('#update').on('click', onUpdateLib);
-  $('#delete').on('click', onDeleteFund);
+  $('#delete').on('click', onDeleteLib);
 };
 
 module.exports = {
@@ -61,5 +62,5 @@ module.exports = {
   getAllHandler,
   onCreateLib,
   onUpdateLib,
-  onDeleteFund,
+  onDeleteLib,
 };
