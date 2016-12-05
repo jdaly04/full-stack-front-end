@@ -1,13 +1,8 @@
-{{#each libraries as |library|}}
 <li>
-  <h3>{{THIS IS WORKING}}</h3>
-  <h4>{{fundraiser.name}}</h4>
-  <h5>{{fundraiser.description}}</h4>
-  <h5>{{fundraiser.url}}</h4>
-  <h5>{{fundraiser.city}}</h4>
+  <h3>Your Libraries</h3>
+  <h4>{{library.name}}</h4>
+  <h4>{{library.id}}</h4>
 <ul>
-    <li button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#deleteFromLib" id="deleteFromlib">Delete from Library</li>
+    <li button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#deleteFromLib" id="deleteFromlib">Delete Library</li>
 </ul>
 </li>
-
-{{/each}}

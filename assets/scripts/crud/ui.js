@@ -16,7 +16,7 @@ const getAllSuccess = (data) => {
 const createLibSuccess = (data) => {
   console.log(data);
 
-//  $('.show-library').html(createLibrary(data));
+$('.show-library').html(createLibrary(data));
 
 };
 
