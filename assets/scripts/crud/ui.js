@@ -2,22 +2,31 @@
 
 //const store = require('./store');
 //const readData = JSON.parse(data);
+const getAllFundraisers = require('../templates/fundraisers.handlebars');
+//const createLibrary = require('../templates/libraries.handlebars');
+//const store = require('../store.js');
 
 const getAllSuccess = (data) => {
+  $('.list-of-fundraisers').html(getAllFundraisers(data));
   console.log(data);
 
   // SHOW ALL FUNDRAISERS IN A TABLE. Be able to add to Library via button
 };
 
 const createLibSuccess = (data) => {
-  console.log('working!');
+  $('.show-library').html('My Library');
+  console.log(data);
+
+//  $('.show-library').html(createLibrary(data));
+
 };
 
 const updateLibSuccess = (data) => {
   console.log('working!');
+  console.log(data);
 };
 
-const deleteFundSuccess = (data) => {
+const deleteLibSuccess = () => {
   console.log('working!');
 };
 
@@ -30,5 +39,5 @@ module.exports = {
   getAllSuccess,
   createLibSuccess,
   updateLibSuccess,
-  deleteFundSuccess,
+  deleteLibSuccess,
 };

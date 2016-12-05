@@ -4,7 +4,7 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 const store = require('../store.js');
 const getFormFields = require('../../../lib/get-form-fields.js');
-const glob = require('./global.js');
+//const glob = require('./global.js');
 
 const onGetAll = function(event) {
   event.preventDefault();
@@ -23,27 +23,20 @@ const onCreateLib = function(event) {
     .catch(ui.failure);
 };
 
-const onUpdateLib = function() {
-  let data = {
-    "library": {
-      "fundraiser": {
-        "name": glob.vars.name,
-        "description": glob.vars.description,
-        "url": glob.vars.url,
-        "city": glob.vars.city,
-      },
-    },
-
-  };
+const onUpdateLib = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
   api.updateLib(data)
     .then(ui.updateLibSuccess)
     .catch(ui.failure);
 };
 
-const onDeleteFund = function(event) {
+const onDeleteLib= function(event) {
   event.preventDefault();
-  api.deleteFund()
-    .then(ui.deleteFundSuccess)
+  let id = $(event.target).data('id');
+  api.deleteLib(id)
+    .then(ui.deleteLibSuccess)
     .catch(ui.failure);
 };
 
@@ -52,8 +45,8 @@ const onDeleteFund = function(event) {
 const getAllHandler = () => {
   $('#get').on('click', onGetAll);
   $('.createLibrary').on('submit', onCreateLib);
-  $('#update').on('click', onUpdateLib);
-  $('#delete').on('click', onDeleteFund);
+  $('#update').on('submit', onUpdateLib);
+  $('#delete').on('click', onDeleteLib);
 };
 
 module.exports = {
@@ -61,5 +54,5 @@ module.exports = {
   getAllHandler,
   onCreateLib,
   onUpdateLib,
-  onDeleteFund,
+  onDeleteLib,
 };
