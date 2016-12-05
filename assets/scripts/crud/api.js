@@ -23,20 +23,23 @@ $.ajax({
      data,
    });
 
-   const updateLib = (data) =>
+   const updateLib = (data) => {
+   console.log(data);
+
     $.ajax({
-    url: config.host + '/libraries/53',
+    url: config.host + '/libraries/' + data.library.id ,
     //url: 'http://localhost:4741/libraries/1',
       method: 'PATCH',
+      data,
        headers: {
        Authorization: 'Token token=' + store.user.token,
        },
-      data,
     });
+  };
 
     const deleteLib= () =>
      $.ajax({
-       url: config.host + '/libraries/52',
+       url: config.host + '/libraries/55',
         method: 'DELETE',
         headers: {
         Authorization: 'Token token=' + store.user.token,

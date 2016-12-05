@@ -4,7 +4,7 @@
 //const readData = JSON.parse(data);
 const getAllFundraisers = require('../templates/fundraisers.handlebars');
 //const createLibrary = require('../templates/libraries.handlebars');
-const store = require('../store.js');
+//const store = require('../store.js');
 
 const getAllSuccess = (data) => {
   $('.list-of-fundraisers').html(getAllFundraisers(data));
@@ -14,6 +14,7 @@ const getAllSuccess = (data) => {
 };
 
 const createLibSuccess = (data) => {
+  $('.show-library').html('My Library');
   console.log(data);
 
 //  $('.show-library').html(createLibrary(data));
