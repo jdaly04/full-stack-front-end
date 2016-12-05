@@ -34,8 +34,8 @@ const onUpdateLib = function(event) {
 
 const onDeleteLib= function(event) {
   event.preventDefault();
-  let id = $(event.target).data('id');
-  api.deleteLib(id)
+  let data = getFormFields(event.target);
+  api.deleteLib(data)
     .then(ui.deleteLibSuccess)
     .catch(ui.failure);
 };
@@ -46,7 +46,7 @@ const getAllHandler = () => {
   $('#get').on('click', onGetAll);
   $('.createLibrary').on('submit', onCreateLib);
   $('#updateLibName').on('submit', onUpdateLib);
-  $('#delete').on('click', onDeleteLib);
+  $('#deleteLib').on('submit', onDeleteLib);
 };
 
 module.exports = {

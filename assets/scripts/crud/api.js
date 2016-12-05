@@ -37,9 +37,9 @@ $.ajax({
     });
 
 
-    const deleteLib= () =>
+    const deleteLib= (data) =>
      $.ajax({
-       url: config.host + '/libraries/55',
+       url: config.host + '/libraries/' + data.library.id,
         method: 'DELETE',
         headers: {
         Authorization: 'Token token=' + store.user.token,

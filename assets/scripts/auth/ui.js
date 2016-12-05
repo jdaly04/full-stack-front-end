@@ -24,6 +24,8 @@ const signInSuccess = (data) => { //if you have curly braces you can have more t
   $('#patch').show();
   $('#update').show();
   $('#updateSubmit').show();
+  $('#delete').show();
+  $('#delete-button').show();
 
   //  button for "My Library" should show up. when you click "my library, you should
   // see a table of your saved fundraisers. Then, you should be able to browse all,

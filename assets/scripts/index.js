@@ -15,6 +15,9 @@ $(() => {
 //  $('#my-library').hide();
   $('#ch-password').hide();
   $('#sign-out-button').hide();
+  $('#delete').hide();
+  $('#delete-button').hide();
+
 
   //when your document is fully loaded, then this code will run. the DOM has been
   // constructed. if you're trying to use an API, check the README doc to kno                            // what the specs are
