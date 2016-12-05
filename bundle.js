@@ -40,6 +40,8 @@ webpackJsonp([0],[
 	  //  $('#my-library').hide();
 	  $('#ch-password').hide();
 	  $('#sign-out-button').hide();
+	  $('#delete').hide();
+	  $('#delete-button').hide();
 
 	  //when your document is fully loaded, then this code will run. the DOM has been
 	  // constructed. if you're trying to use an API, check the README doc to kno                            // what the specs are
@@ -277,6 +279,8 @@ webpackJsonp([0],[
 	  $('#patch').show();
 	  $('#update').show();
 	  $('#updateSubmit').show();
+	  $('#delete').show();
+	  $('#delete-button').show();
 
 	  //  button for "My Library" should show up. when you click "my library, you should
 	  // see a table of your saved fundraisers. Then, you should be able to browse all,
@@ -342,21 +346,21 @@ webpackJsonp([0],[
 	var onUpdateLib = function onUpdateLib(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log(data);
+	  console.log(event.target);
 	  api.updateLib(data).then(ui.updateLibSuccess).catch(ui.failure);
 	};
 
 	var onDeleteLib = function onDeleteLib(event) {
 	  event.preventDefault();
-	  var id = $(event.target).data('id');
-	  api.deleteLib(id).then(ui.deleteLibSuccess).catch(ui.failure);
+	  var data = getFormFields(event.target);
+	  api.deleteLib(data).then(ui.deleteLibSuccess).catch(ui.failure);
 	};
 
 	var getAllHandler = function getAllHandler() {
 	  $('#get').on('click', onGetAll);
 	  $('.createLibrary').on('submit', onCreateLib);
-	  $('#update').on('submit', onUpdateLib);
-	  $('#delete').on('click', onDeleteLib);
+	  $('#updateLibName').on('submit', onUpdateLib);
+	  $('#deleteLib').on('submit', onDeleteLib);
 	};
 
 	module.exports = {
@@ -400,22 +404,24 @@ webpackJsonp([0],[
 	};
 
 	var updateLib = function updateLib(data) {
-	  console.log(data);
+	  return (
+	    // console.log(data);
 
-	  $.ajax({
-	    url: config.host + '/libraries/' + data.library.id,
-	    //url: 'http://localhost:4741/libraries/1',
-	    method: 'PATCH',
-	    data: data,
-	    headers: {
-	      Authorization: 'Token token=' + store.user.token
-	    }
-	  });
+	    $.ajax({
+	      url: config.host + '/libraries/' + data.library.id,
+	      //url: 'http://localhost:4741/libraries/1',
+	      method: 'PATCH',
+	      headers: {
+	        Authorization: 'Token token=' + store.user.token
+	      },
+	      data: data
+	    })
+	  );
 	};
 
-	var deleteLib = function deleteLib() {
+	var deleteLib = function deleteLib(data) {
 	  return $.ajax({
-	    url: config.host + '/libraries/55',
+	    url: config.host + '/libraries/' + data.library.id,
 	    method: 'DELETE',
 	    headers: {
 	      Authorization: 'Token token=' + store.user.token
