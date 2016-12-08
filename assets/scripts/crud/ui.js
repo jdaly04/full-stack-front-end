@@ -3,7 +3,7 @@
 //const store = require('./store');
 //const readData = JSON.parse(data);
 const getAllFundraisers = require('../templates/fundraisers.handlebars');
-//const createLibrary = require('../templates/libraries.handlebars');
+const createLibrary = require('../templates/libraries.handlebars');
 //const store = require('../store.js');
 
 const getAllSuccess = (data) => {
@@ -14,10 +14,9 @@ const getAllSuccess = (data) => {
 };
 
 const createLibSuccess = (data) => {
-  $('.show-library').html('My Library');
+//  $('.show-library').html('My Library');
   console.log(data);
-
-//  $('.show-library').html(createLibrary(data));
+  $('.show-library').html(createLibrary(data));
 
 };
 
@@ -28,6 +27,7 @@ const updateLibSuccess = (data) => {
 
 const deleteLibSuccess = () => {
   console.log('working!');
+  $('.show-library').hide();
 };
 
 const failure = (error) => {
