@@ -29,6 +29,7 @@ const signInSuccess = (data) => { //if you have curly braces you can have more t
   $('#update-submit').show();
   $('#updateLibName').show();
   $('#create-form').show();
+  $('#get-libraries').show();
 
   //  button for "My Library" should show up. when you click "my library, you should
   // see a table of your saved fundraisers. Then, you should be able to browse all,
@@ -51,6 +52,7 @@ const signOutSuccess = () => {
   $('#update-submit').hide();
   $('#updateLibName').hide();
   $('#create-form').hide();
+  $('#get-libraries').hide();
 };
 
 

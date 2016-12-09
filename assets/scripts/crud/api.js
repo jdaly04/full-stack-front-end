@@ -13,6 +13,16 @@ $.ajax({
     data,
   });
 
+  const getLibraries = (data) =>
+  $.ajax({
+      url: config.host + '/libraries',
+      method: 'GET',
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+      data,
+    });
+
   const createLib = (data) =>
    $.ajax({
      url: config.host + '/libraries',
@@ -53,4 +63,5 @@ module.exports = {
   createLib,
   updateLib,
   deleteLib,
+  getLibraries,
 };

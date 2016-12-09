@@ -4,6 +4,7 @@
 //const readData = JSON.parse(data);
 const getAllFundraisers = require('../templates/fundraisers.handlebars');
 const createLibrary = require('../templates/libraries.handlebars');
+const getAllLibraries = require('../templates/allLibraries.handlebars');
 //const store = require('../store.js');
 
 const getAllSuccess = (data) => {
@@ -11,6 +12,11 @@ const getAllSuccess = (data) => {
   console.log(data);
 
   // SHOW ALL FUNDRAISERS IN A TABLE. Be able to add to Library via button
+};
+
+const getLibrariesSuccess = (data) => {
+  $('.get-all-libraries').html(getAllLibraries(data));
+  console.log(data);
 };
 
 const createLibSuccess = (data) => {
@@ -37,6 +43,7 @@ const failure = (error) => {
 module.exports = {
   failure,
   getAllSuccess,
+  getLibrariesSuccess,
   createLibSuccess,
   updateLibSuccess,
   deleteLibSuccess,

@@ -20,6 +20,7 @@ $(() => {
   $('#update-submit').hide();
   $('#updateLibName').hide();
   $('#create-form').hide();
+  $('#get-libraries').hide();
 
 
   //when your document is fully loaded, then this code will run. the DOM has been
