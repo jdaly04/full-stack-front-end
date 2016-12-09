@@ -3,7 +3,8 @@
 //const store = require('./store');
 //const readData = JSON.parse(data);
 const getAllFundraisers = require('../templates/fundraisers.handlebars');
-//const createLibrary = require('../templates/libraries.handlebars');
+const createLibrary = require('../templates/libraries.handlebars');
+const getAllLibraries = require('../templates/allLibraries.handlebars');
 //const store = require('../store.js');
 
 const getAllSuccess = (data) => {
@@ -13,11 +14,15 @@ const getAllSuccess = (data) => {
   // SHOW ALL FUNDRAISERS IN A TABLE. Be able to add to Library via button
 };
 
-const createLibSuccess = (data) => {
-  $('.show-library').html('My Library');
+const getLibrariesSuccess = (data) => {
+  $('.get-all-libraries').html(getAllLibraries(data));
   console.log(data);
+};
 
-//  $('.show-library').html(createLibrary(data));
+const createLibSuccess = (data) => {
+//  $('.show-library').html('My Library');
+  console.log(data);
+  $('.show-library').html(createLibrary(data));
 
 };
 
@@ -28,6 +33,7 @@ const updateLibSuccess = (data) => {
 
 const deleteLibSuccess = () => {
   console.log('working!');
+  $('.show-library').hide();
 };
 
 const failure = (error) => {
@@ -37,6 +43,7 @@ const failure = (error) => {
 module.exports = {
   failure,
   getAllSuccess,
+  getLibrariesSuccess,
   createLibSuccess,
   updateLibSuccess,
   deleteLibSuccess,
