@@ -9,6 +9,8 @@ const getAllLibraries = require('../templates/allLibraries.handlebars');
 
 const getAllSuccess = (data) => {
   $('.list-of-fundraisers').html(getAllFundraisers(data));
+  $('#update-submit').hide();
+  $('#updateLibName').hide();
   console.log(data);
 
   // SHOW ALL FUNDRAISERS IN A TABLE. Be able to add to Library via button
@@ -16,13 +18,16 @@ const getAllSuccess = (data) => {
 
 const getLibrariesSuccess = (data) => {
   $('.get-all-libraries').html(getAllLibraries(data));
+  $('#update-submit').show();
+  $('#updateLibName').show();
+  $('#delete').show();
+  $('#delete-button').show();
   console.log(data);
 };
 
 const createLibSuccess = (data) => {
-//  $('.show-library').html('My Library');
   console.log(data);
-  $('.show-library').html(createLibrary(data));
+  // $('.show-library').html(createLibrary(data));
 
 };
 

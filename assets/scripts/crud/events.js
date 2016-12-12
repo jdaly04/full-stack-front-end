@@ -8,11 +8,11 @@ const getFormFields = require('../../../lib/get-form-fields.js');
 
 const onGetAll = function(event) {
   event.preventDefault();
-  if (store.user) {
+  // if (store.user) {
   api.getAll() // NEEDS TO BE UPDATED.
     .then(ui.getAllSuccess)  //getAllSuccess needs to be updated
     .catch(ui.failure);
-  }
+  // }
 };
 
 const onGetLibraries = function(event) {

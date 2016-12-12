@@ -24,14 +24,15 @@ const signInSuccess = (data) => { //if you have curly braces you can have more t
   $('#patch').show();
   // $('#update').show();
   // $('#updateSubmit').show();
-  $('#delete').show();
-  $('#delete-button').show();
-  $('#update-submit').show();
-  $('#updateLibName').show();
+  $('#delete').hide();
+  $('#delete-button').hide();
+  $('#update-submit').hide();
+  $('#updateLibName').hide();
   $('#create-form').show();
   $('#get-libraries').show();
   $('.list-of-fundraisers').show();
   $('.get-all-libraries').show();
+
 
   //  button for "My Library" should show up. when you click "my library, you should
   // see a table of your saved fundraisers. Then, you should be able to browse all,
@@ -55,8 +56,9 @@ const signOutSuccess = () => {
   $('#updateLibName').hide();
   $('#create-form').hide();
   $('#get-libraries').hide();
-  $('.list-of-fundraisers').hide();
   $('.get-all-libraries').hide();
+  $('.get-all-libraries').empty();
+  $('.list-of-fundraisers').empty();
 };
 
 

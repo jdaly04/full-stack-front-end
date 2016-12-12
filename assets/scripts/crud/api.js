@@ -7,9 +7,9 @@ const getAll = (data) =>
 $.ajax({
     url: config.host + '/fundraisers',
     method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token,
-    },
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token,
+    // },
     data,
   });
 
