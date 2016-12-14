@@ -8,15 +8,15 @@ const getFormFields = require('../../../lib/get-form-fields.js');
 
 const onGetAll = function(event) {
   event.preventDefault();
-  if (store.user) {
+  // if (store.user) {
   api.getAll() // NEEDS TO BE UPDATED.
     .then(ui.getAllSuccess)  //getAllSuccess needs to be updated
     .catch(ui.failure);
-  }
+  // }
 };
 
-const onGetLibraries = function(event) {
-  event.preventDefault();
+const onGetLibraries = function() {
+  // event.preventDefault();
   if (store.user) {
   api.getLibraries()
     .then(ui.getLibrariesSuccess)
@@ -27,9 +27,12 @@ const onGetLibraries = function(event) {
 const onCreateLib = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  api.createLib(data) // NEEDS TO BE UPDATED.
-    .then(ui.createLibSuccess)  //getAllSuccess needs to be updated
-    .catch(ui.failure);
+  api.createLib(data)
+    .then(ui.createLibSuccess)
+    .then(function() {
+      onGetLibraries();
+    })
+    .catch(ui.createFailure);
 };
 
 const onUpdateLib = function(event) {
@@ -38,7 +41,10 @@ const onUpdateLib = function(event) {
   console.log(event.target);
   api.updateLib(data)
     .then(ui.updateLibSuccess)
-    .catch(ui.failure);
+    .then(function() {
+      onGetLibraries();
+  })
+    .catch(ui.updateFailure);
 };
 
 const onDeleteLib= function(event) {
@@ -46,10 +52,11 @@ const onDeleteLib= function(event) {
   let data = getFormFields(event.target);
   api.deleteLib(data)
     .then(ui.deleteLibSuccess)
+    .then(function() {
+      onGetLibraries();
+  })
     .catch(ui.failure);
 };
-
-
 
 const getAllHandler = () => {
   $('#get').on('click', onGetAll);

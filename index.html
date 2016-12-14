@@ -145,11 +145,17 @@
     </div>
   </div>
 
+  <!-- USER MESSAGES DIV -->
+  <div class="container-fluid">
+    <ul class="messages">
+    </ul>
+  </div>
+
 <!-- GET REQUEST BUTTONS-->
   <h1 class="data"></h1>
   <div class="api-buttons">
-    <button type="button" class="get-all" id="get">GET FUNDRAISERS</button>
-    <button type="button" class="get-all" id="get-libraries">GET LIBRARIES</button>
+    <button type="button" class="get-all" id="get">VIEW ALL FUNDRAISERS</button>
+    <button type="button" class="get-all" id="get-libraries">VIEW MY LIBRARIES</button>
 
 <!-- CREATE LIBRARY FORM AND BUTTON -->
     <form class="createLibrary" id="create-form">
@@ -165,7 +171,7 @@
     </form>
 
 <!-- DELETE LIBRARY FORM AND BUTTON -->
-    <button type="button" class="delete-my" id='delete'>DELETE LIBRARY
+    <button type="button" class="delete-my" id='delete'>
           <form id="deleteLib">
             <input type="text" name="library[id]" placeholder="Library Id">
             <button type="submit" class="btn btn-default" id="delete-button">Delete</button>
@@ -188,8 +194,6 @@
     <ul class="get-all-libraries">
     </ul>
   </div>
-
-
 
 
 </body>

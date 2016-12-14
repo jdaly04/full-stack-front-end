@@ -4,13 +4,15 @@ const store = require('../store');
 
 
 const success = (data) => {
-//  $('#messages').text('success');
   console.log(data);
+  $('.messages').empty();
 };
 
 const signUpSuccess = (data) => {
   store.token = data.user.token;
   $('#signUpModal').modal("hide");
+  $('#sign-up').trigger("reset");
+  $('.messages').text('Signed up! Now sign in!');
 };
 
 const signInSuccess = (data) => { //if you have curly braces you can have more than one expression. without, only 1 expression allowed.
@@ -24,14 +26,19 @@ const signInSuccess = (data) => { //if you have curly braces you can have more t
   $('#patch').show();
   // $('#update').show();
   // $('#updateSubmit').show();
-  $('#delete').show();
-  $('#delete-button').show();
-  $('#update-submit').show();
-  $('#updateLibName').show();
+  $('#delete').hide();
+  $('#delete-button').hide();
+  $('#update-submit').hide();
+  $('#updateLibName').hide();
   $('#create-form').show();
   $('#get-libraries').show();
   $('.list-of-fundraisers').show();
   $('.get-all-libraries').show();
+  $('#sign-in').trigger("reset");
+  $('.messages').text('Success! You can now create a new library and/or view your current libraries! Soon, you can add fundraisers to libraries!(You can still view all the current fundraisers!)');
+
+
+
 
   //  button for "My Library" should show up. when you click "my library, you should
   // see a table of your saved fundraisers. Then, you should be able to browse all,
@@ -41,6 +48,8 @@ const signInSuccess = (data) => { //if you have curly braces you can have more t
 
 const changePasswordSuccess = (data) => {
   $('#changePasswordModal').modal("hide");
+  $('#change-password').trigger("reset");
+  $('.messages').empty();
   console.log(data);
 };
 
@@ -55,12 +64,15 @@ const signOutSuccess = () => {
   $('#updateLibName').hide();
   $('#create-form').hide();
   $('#get-libraries').hide();
-  $('.list-of-fundraisers').hide();
   $('.get-all-libraries').hide();
+  $('.get-all-libraries').empty();
+  $('.list-of-fundraisers').empty();
+  $('.messages').empty();
 };
 
 
 const failure = (error) => {
+  $('.messages').text('Oops, something went wrong. Try again.');
   console.error(error);
 };
 

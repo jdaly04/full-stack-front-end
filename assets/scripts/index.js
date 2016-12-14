@@ -21,6 +21,8 @@ $(() => {
   $('#updateLibName').hide();
   $('#create-form').hide();
   $('#get-libraries').hide();
+  $('.messages').text('Welcome! Please sign up and/or in to get started!');
+
 
 
   //when your document is fully loaded, then this code will run. the DOM has been
