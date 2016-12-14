@@ -26,7 +26,7 @@ const changePassword = (data) =>
     },
   });
 
-  const signOut = () => ////we should also add store.user = null (so the token is no longer stored)
+const signOut = () => ////we should also add store.user = null (so the token is no longer stored)
   $.ajax({
     url: config.host + '/sign-out/' + store.user.id,
     method: 'DELETE',
@@ -38,8 +38,8 @@ const changePassword = (data) =>
 
 
 module.exports = {
-signUp,
-signIn,
-changePassword,
-signOut,
+  signUp,
+  signIn,
+  changePassword,
+  signOut,
 };

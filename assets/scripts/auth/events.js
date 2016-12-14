@@ -25,19 +25,19 @@ const onSignIn = function(event) {
 const onChangePassword = function(event) {
   event.preventDefault();
   if (store.user) {
-  let data = getFormFields(this);
-  api.changePassword(data)
-    .then(ui.changePasswordSuccess)
-    .catch(ui.failure);
+    let data = getFormFields(this);
+    api.changePassword(data)
+      .then(ui.changePasswordSuccess)
+      .catch(ui.failure);
   }
 };
 
 const onSignOut = function(event) {
   event.preventDefault();
   if (store.user) {
-  api.signOut()
-    .then(ui.signOutSuccess)
-    .catch(ui.failure);
+    api.signOut()
+      .then(ui.signOutSuccess)
+      .catch(ui.failure);
     $('#signOutModal').modal("hide");
   }
 };

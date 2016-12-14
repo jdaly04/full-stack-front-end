@@ -15,7 +15,7 @@ const signUpSuccess = (data) => {
   $('.messages').text('Signed up! Now sign in!');
 };
 
-const signInSuccess = (data) => { //if you have curly braces you can have more than one expression. without, only 1 expression allowed.
+const signInSuccess = (data) => {
   store.user = data.user;
   success(data);
   $('#ch-password').show();
@@ -24,8 +24,6 @@ const signInSuccess = (data) => { //if you have curly braces you can have more t
   $('#sign-up-button').hide();
   $('#signInModal').modal("hide");
   $('#patch').show();
-  // $('#update').show();
-  // $('#updateSubmit').show();
   $('#delete').hide();
   $('#delete-button').hide();
   $('#update-submit').hide();

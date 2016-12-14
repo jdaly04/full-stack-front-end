@@ -1,11 +1,8 @@
 'use strict';
 
-//const store = require('./store');
-//const readData = JSON.parse(data);
 const getAllFundraisers = require('../templates/fundraisers.handlebars');
-// const createLibrary = require('../templates/libraries.handlebars');
 const getAllLibraries = require('../templates/allLibraries.handlebars');
-//const store = require('../store.js');
+
 
 const getAllSuccess = (data) => {
   $('.list-of-fundraisers').html(getAllFundraisers(data));
@@ -33,7 +30,7 @@ const createLibSuccess = (data) => {
 
 const createFailure = (error) => {
   console.error(error);
-    $('.messages').text('Oops, something went wrong. Make sure your library is only twenty characters, and that it is a new library name!');
+  $('.messages').text('Oops, something went wrong. Make sure your library is only twenty characters, and that it is a new library name!');
 };
 
 const updateLibSuccess = (data) => {

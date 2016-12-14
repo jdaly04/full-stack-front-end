@@ -8,19 +8,16 @@ const getFormFields = require('../../../lib/get-form-fields.js');
 
 const onGetAll = function(event) {
   event.preventDefault();
-  // if (store.user) {
-  api.getAll() // NEEDS TO BE UPDATED.
-    .then(ui.getAllSuccess)  //getAllSuccess needs to be updated
+  api.getAll()
+    .then(ui.getAllSuccess)
     .catch(ui.failure);
-  // }
 };
 
 const onGetLibraries = function() {
-  // event.preventDefault();
   if (store.user) {
-  api.getLibraries()
-    .then(ui.getLibrariesSuccess)
-    .catch(ui.failure);
+    api.getLibraries()
+      .then(ui.getLibrariesSuccess)
+      .catch(ui.failure);
   }
 };
 
@@ -43,18 +40,18 @@ const onUpdateLib = function(event) {
     .then(ui.updateLibSuccess)
     .then(function() {
       onGetLibraries();
-  })
+    })
     .catch(ui.updateFailure);
 };
 
-const onDeleteLib= function(event) {
+const onDeleteLib = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.deleteLib(data)
     .then(ui.deleteLibSuccess)
     .then(function() {
       onGetLibraries();
-  })
+    })
     .catch(ui.failure);
 };
 
