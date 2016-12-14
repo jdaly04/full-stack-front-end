@@ -21,6 +21,7 @@ $(() => {
   $('#updateLibName').hide();
   $('#create-form').hide();
   $('#get-libraries').hide();
+  $('.messages').text('Welcome! Please sign up and/or in to get started!');
 
 
 
