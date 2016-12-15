@@ -4,7 +4,6 @@ const store = require('../store');
 
 
 const success = (data) => {
-  console.log(data);
   $('.messages').empty();
 };
 
@@ -13,6 +12,7 @@ const signUpSuccess = (data) => {
   $('#signUpModal').modal("hide");
   $('#sign-up').trigger("reset");
   $('.messages').text('Signed up! Now sign in!');
+  $('#sign-in').trigger("reset");
 };
 
 const signInSuccess = (data) => { //if you have curly braces you can have more than one expression. without, only 1 expression allowed.
@@ -50,7 +50,6 @@ const changePasswordSuccess = (data) => {
   $('#changePasswordModal').modal("hide");
   $('#change-password').trigger("reset");
   $('.messages').empty();
-  console.log(data);
 };
 
 const signOutSuccess = () => {

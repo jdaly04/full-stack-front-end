@@ -34,8 +34,6 @@ $.ajax({
    });
 
    const updateLib = (data) =>
-  // console.log(data);
-
     $.ajax({
     url: config.host + '/libraries/' + data.library.id ,
     //url: 'http://localhost:4741/libraries/1',

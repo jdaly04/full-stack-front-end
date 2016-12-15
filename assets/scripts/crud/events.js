@@ -38,7 +38,6 @@ const onCreateLib = function(event) {
 const onUpdateLib = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(event.target);
   api.updateLib(data)
     .then(ui.updateLibSuccess)
     .then(function() {

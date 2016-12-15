@@ -10,7 +10,7 @@ const getAllLibraries = require('../templates/allLibraries.handlebars');
 const getAllSuccess = (data) => {
   $('.list-of-fundraisers').html(getAllFundraisers(data));
   $('.messages').empty();
-  console.log(data);
+
 
   // Need to add button for user to add fundraiser to library by fundraiser id and library id so it goes in correct library.
 };
@@ -22,11 +22,9 @@ const getLibrariesSuccess = (data) => {
   $('#delete').show();
   $('#delete-button').show();
   $('.messages').empty();
-  console.log(data);
 };
 
 const createLibSuccess = (data) => {
-  console.log(data);
   $('.messages').text('Success! New library created and added to the end of your library list!');
   $('#create-form').trigger("reset");
 };
@@ -37,8 +35,6 @@ const createFailure = (error) => {
 };
 
 const updateLibSuccess = (data) => {
-  console.log('working!');
-  console.log(data);
   $('#updateLibName').trigger("reset");
 };
 
@@ -48,7 +44,6 @@ const updateFailure = (error) => {
 };
 
 const deleteLibSuccess = () => {
-  console.log('working!');
   $('.show-library').hide();
   $('#deleteLib').trigger("reset");
 };
